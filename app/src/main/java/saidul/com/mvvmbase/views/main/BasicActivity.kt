@@ -4,7 +4,7 @@ import android.arch.lifecycle.Observer
 import android.arch.lifecycle.ViewModelProvider
 import android.arch.lifecycle.ViewModelProviders
 import android.os.Bundle
-import kotlinx.android.synthetic.main.activity_basic.*
+import kotlinx.android.synthetic.main.content_basic.*
 import saidul.com.mvvmbase.R
 import saidul.com.mvvmbase.common.BaseActivity
 import timber.log.Timber
@@ -19,6 +19,8 @@ class BasicActivity : BaseActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_basic)
+
+        setToolbar()
 
         mBasicViewModel = ViewModelProviders.of(this, viewModelFactory).get(BasicViewModel::class.java)
 

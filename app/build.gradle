@@ -48,6 +48,8 @@ dependencies {
     implementation "com.android.support:appcompat-v7:$appcompatVersion"
     implementation "com.android.support.constraint:constraint-layout:$constraintLayoutVersion"
 
+    implementation 'com.android.support:design:27.1.1'
+
 
 // ViewModel and LiveData
     implementation "android.arch.lifecycle:extensions:$archVersion"

@@ -1,28 +1,20 @@
-package saidul.com.mvvmbase.common
+package saidul.com.mvvmbase.base
 
 import android.app.ProgressDialog
-import android.arch.lifecycle.Observer
+import android.support.v7.app.AppCompatActivity
 import android.view.MenuItem
-import android.view.View
-import dagger.android.support.DaggerAppCompatActivity
 import kotlinx.android.synthetic.main.app_bar_main.*
 
 /**
- * Created by ankitsharma on 11/01/18.
+ * Created by Kazi Md. Saidul Email: Kazimdsaidul@gmail.com  Mobile: +8801675349882 on 7/23/18.
  */
-open class BaseActivity: DaggerAppCompatActivity() {
+
+open class BaseAppCompatActivity: AppCompatActivity(){
 
     companion object {
-         var progDailog: ProgressDialog? = null
-         var TAG : String = this.javaClass.simpleName;
+        private var progDailog: ProgressDialog? = null
+        public var TAG : String = this.javaClass.simpleName;
     }
-
-    fun observeLoader(viewModel: BaseViewModel, loaderView: View) {
-        viewModel.loader.observe(this, Observer {
-            loaderView.visibility = if(it != null && it) View.VISIBLE else View.GONE
-        })
-    }
-
 
     public fun setToolbar() {
         setSupportActionBar(toolbar)
@@ -59,4 +51,7 @@ open class BaseActivity: DaggerAppCompatActivity() {
             progDailog?.dismiss()
         }
     }
+
+
+
 }
