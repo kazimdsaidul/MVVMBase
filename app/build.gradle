@@ -3,12 +3,14 @@ apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
 
 apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-kapt'
+apply plugin: 'org.jetbrains.dokka-android'
 
 android {
     compileSdkVersion 27
     defaultConfig {
         applicationId "saidul.com.mvvmbase"
-        minSdkVersion 15
+        minSdkVersion 21
         targetSdkVersion 27
         versionCode 1
         versionName "1.0"
@@ -20,14 +22,61 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+}
+ext {
+    appcompatVersion = "27.1.1"
+    constraintLayoutVersion = "1.1.2"
+    archVersion = '1.0.0'
+    okhttpVersion = '3.8.1'
+    timberVersion = '4.6.0'
+    retrofitVersion = '2.3.0'
+    rxJava = '2.1.6'
+    daggerVersion = '2.13'
+}
+kapt {
+    generateStubs = true
 }
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
-    implementation"org.jetbrains.kotlin:kotlin-stdlib-jre7:$kotlin_version"
-    implementation 'com.android.support:appcompat-v7:27.1.1'
-    implementation 'com.android.support.constraint:constraint-layout:1.1.2'
-    testImplementation 'junit:junit:4.12'
-    androidTestImplementation 'com.android.support.test:runner:1.0.2'
-    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jre7:$kotlin_version"
+
+    //View
+    implementation 'com.android.support:appcompat-v7:26.1.0'
+    implementation 'com.android.support:recyclerview-v7:26.1.0'
+    implementation 'com.android.support.constraint:constraint-layout:1.0.2'
+
+    // ViewModel and LiveData
+    implementation "android.arch.lifecycle:extensions:1.0.0"
+    implementation "android.arch.lifecycle:common-java8:1.0.0"
+    implementation "android.arch.lifecycle:reactivestreams:1.0.0"
+
+    //okhttp
+    implementation 'com.squareup.okhttp3:okhttp:3.8.1'
+    implementation 'com.squareup.okhttp3:logging-interceptor:3.8.1'
+
+    //logger
+    implementation 'com.jakewharton.timber:timber:4.6.0'
+
+    //retrofit
+    implementation 'com.squareup.retrofit2:retrofit:2.3.0'
+    implementation 'com.squareup.retrofit2:adapter-rxjava2:2.3.0'
+    implementation 'com.squareup.retrofit2:converter-gson:2.3.0'
+
+    //rxjava
+    implementation 'io.reactivex.rxjava2:rxjava:2.1.6'
+    implementation 'io.reactivex.rxjava2:rxandroid:2.0.1'
+    implementation 'io.reactivex.rxjava2:rxkotlin:2.2.0'
+
+    //dagger
+    implementation 'com.google.dagger:dagger:2.13'
+    implementation 'com.google.dagger:dagger-android:2.13'
+    implementation 'com.google.dagger:dagger-android-support:2.13'
+    kapt 'com.google.dagger:dagger-compiler:2.13'
+    kapt 'com.google.dagger:dagger-android-processor:2.13'
+
 }
