@@ -14,7 +14,7 @@ import javax.inject.Inject
 /**
  * Created by ankitsharma on 11/01/18.
  */
-class MainViewModel @Inject constructor(private val dataRepository: DataRepository) : BaseViewModel() {
+class BasicViewModel @Inject constructor(private val dataRepository: DataRepository) : BaseViewModel() {
 
     private var msg: String = "test"
     var repoList: MutableLiveData<List<RepoDTO>> = MutableLiveData()

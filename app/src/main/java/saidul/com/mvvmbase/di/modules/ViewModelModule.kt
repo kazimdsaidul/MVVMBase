@@ -7,7 +7,7 @@ import dagger.Module
 import dagger.multibindings.IntoMap
 import saidul.com.mvvmbase.common.ViewModelFactory
 import saidul.com.mvvmbase.di.annotations.ViewModelKey
-import saidul.com.mvvmbase.views.main.MainViewModel
+import saidul.com.mvvmbase.views.main.BasicViewModel
 
 /**
  * Provides map of all ViewModels and a ViewModelFactory for dependencies
@@ -19,8 +19,8 @@ abstract class ViewModelModule {
 
     @Binds
     @IntoMap
-    @ViewModelKey(MainViewModel::class)
-    abstract fun bindMainViewModel(mainViewModel: MainViewModel): ViewModel
+    @ViewModelKey(BasicViewModel::class)
+    abstract fun bindMainViewModel(basicViewModel: BasicViewModel): ViewModel
 
     @Binds
     abstract fun bindViewModelFactory(viewModelFactory: ViewModelFactory): ViewModelProvider.Factory

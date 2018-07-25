@@ -2,9 +2,9 @@ package saidul.com.mvvmbase.di.modules
 
 import dagger.Module
 import dagger.android.ContributesAndroidInjector
-import saidul.com.mvvmbase.MainActivity
+import saidul.com.mvvmbase.views.main.BasicActivity
 import saidul.com.mvvmbase.di.annotations.ActivityScope
-import saidul.com.mvvmbase.views.main.MainActivityModule
+import saidul.com.mvvmbase.views.main.BasicActivityModule
 
 /**
  * Contains all activities to be bound to application dependency graph
@@ -15,6 +15,6 @@ import saidul.com.mvvmbase.views.main.MainActivityModule
 abstract class ActivityBuilderModule {
 
     @ActivityScope
-    @ContributesAndroidInjector(modules = arrayOf(MainActivityModule::class))
-    abstract fun bindMainActivity(): MainActivity
+    @ContributesAndroidInjector(modules = arrayOf(BasicActivityModule::class))
+    abstract fun bindMainActivity(): BasicActivity
 }
