@@ -11,10 +11,10 @@ import android.view.MenuItem
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.app_bar_main.*
 import saidul.com.mvvmbase.R
-import saidul.com.mvvmbase.views.main.BasicActivity
+import saidul.com.mvvmbase.views.main.basic.BasicActivity
 
 
-class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener {
+class HomeActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

@@ -7,7 +7,7 @@ import dagger.Module
 import dagger.multibindings.IntoMap
 import saidul.com.mvvmbase.common.ViewModelFactory
 import saidul.com.mvvmbase.di.annotations.ViewModelKey
-import saidul.com.mvvmbase.views.main.BasicViewModel
+import saidul.com.mvvmbase.views.main.basic.BasicViewModel
 
 /**
  * Provides map of all ViewModels and a ViewModelFactory for dependencies

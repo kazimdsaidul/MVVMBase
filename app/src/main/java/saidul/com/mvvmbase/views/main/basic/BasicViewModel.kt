@@ -1,4 +1,4 @@
-package saidul.com.mvvmbase.views.main
+package saidul.com.mvvmbase.views.main.basic
 
 import android.arch.lifecycle.MutableLiveData
 import io.reactivex.android.schedulers.AndroidSchedulers

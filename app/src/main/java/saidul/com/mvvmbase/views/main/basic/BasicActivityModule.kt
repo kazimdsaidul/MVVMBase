@@ -1,4 +1,4 @@
-package saidul.com.mvvmbase.views.main
+package saidul.com.mvvmbase.views.main.basic
 
 import dagger.Module
 
