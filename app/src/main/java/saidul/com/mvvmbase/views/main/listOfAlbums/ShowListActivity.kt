@@ -19,10 +19,10 @@ class ShowListActivity : BaseActivity() {
     @Inject
     lateinit var viewModelFactory: ViewModelProvider.Factory
     lateinit var mAlbumsViewModel:AlbusActivityModel
-//
-//    companion object {
-//        var TAG: String = this.javaClass.simpleName;
-//    }
+
+    companion object {
+        var TAG: String = this.javaClass.simpleName;
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -31,16 +31,16 @@ class ShowListActivity : BaseActivity() {
 
 
         mAlbumsViewModel = ViewModelProviders.of(this, viewModelFactory).get(AlbusActivityModel::class.java)
-//
+
+        observeLoader(mAlbumsViewModel)
+
         obsereAlbusData();
-//
+
         if(mAlbumsViewModel.albusList .value == null){
             mAlbumsViewModel.getAlbusList();
 
 
         }
-
-
 
     }
 

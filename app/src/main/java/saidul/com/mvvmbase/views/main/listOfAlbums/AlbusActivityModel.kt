@@ -21,11 +21,15 @@ class AlbusActivityModel @Inject constructor(private val dataRepository: DataRep
 
 
     fun getAlbusList(){
+
+        displayLoader(true)
+
         dataRepository.getAlbusList()?.observeOn(AndroidSchedulers.mainThread())
                 ?.subscribe(object : ApiObserver<Array<Datum>>(compositeDisposable){
 
             override fun onSuccess(data: Array<Datum>) {
                 albusList.value = data;
+                displayLoader(false)
 
             }
 

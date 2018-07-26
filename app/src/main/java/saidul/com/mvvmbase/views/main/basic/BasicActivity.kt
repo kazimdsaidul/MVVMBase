@@ -25,12 +25,12 @@ class BasicActivity : BaseActivity() {
         mBasicViewModel = ViewModelProviders.of(this, viewModelFactory).get(BasicViewModel::class.java)
 
         // observerLoader
-        observeLoader(mBasicViewModel, loaderView)
+        observeLoader(mBasicViewModel)
 
         observeSearchResults()
 
 
-
+        // call api
         if (mBasicViewModel.repoList.value == null){
 
 

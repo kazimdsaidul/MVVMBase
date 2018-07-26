@@ -3,7 +3,6 @@ package saidul.com.mvvmbase.common
 import android.app.ProgressDialog
 import android.arch.lifecycle.Observer
 import android.view.MenuItem
-import android.view.View
 import dagger.android.support.DaggerAppCompatActivity
 import kotlinx.android.synthetic.main.app_bar_main.*
 
@@ -17,9 +16,13 @@ open class BaseActivity: DaggerAppCompatActivity() {
          var TAG : String = this.javaClass.simpleName;
     }
 
-    fun observeLoader(viewModel: BaseViewModel, loaderView: View) {
+    fun observeLoader(viewModel: BaseViewModel) {
         viewModel.loader.observe(this, Observer {
-            loaderView.visibility = if(it != null && it) View.VISIBLE else View.GONE
+           if(it != null && it)
+              showprogessdialog()
+
+           else
+               hiddenProgressDialog()
         })
     }
 
