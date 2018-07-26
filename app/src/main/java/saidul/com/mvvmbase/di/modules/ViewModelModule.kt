@@ -8,6 +8,7 @@ import dagger.multibindings.IntoMap
 import saidul.com.mvvmbase.common.ViewModelFactory
 import saidul.com.mvvmbase.di.annotations.ViewModelKey
 import saidul.com.mvvmbase.views.main.basic.BasicViewModel
+import saidul.com.mvvmbase.views.main.listOfAlbums.AlbusActivityModel
 
 /**
  * Provides map of all ViewModels and a ViewModelFactory for dependencies
@@ -21,6 +22,14 @@ abstract class ViewModelModule {
     @IntoMap
     @ViewModelKey(BasicViewModel::class)
     abstract fun bindMainViewModel(basicViewModel: BasicViewModel): ViewModel
+
+
+    @Binds
+    @IntoMap
+    @ViewModelKey(AlbusActivityModel::class)
+    abstract fun bindAlbusActivityViewModel(albusActivityModel: AlbusActivityModel): ViewModel
+
+
 
     @Binds
     abstract fun bindViewModelFactory(viewModelFactory: ViewModelFactory): ViewModelProvider.Factory

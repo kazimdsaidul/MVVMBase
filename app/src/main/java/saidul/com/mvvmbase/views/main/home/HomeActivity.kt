@@ -12,6 +12,7 @@ import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.app_bar_main.*
 import saidul.com.mvvmbase.R
 import saidul.com.mvvmbase.views.main.basic.BasicActivity
+import saidul.com.mvvmbase.views.main.listOfAlbums.ShowListActivity
 
 
 class HomeActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener {
@@ -66,6 +67,12 @@ class HomeActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
 
             }
             R.id.nav_gallery -> {
+
+
+
+
+                val intent=Intent(applicationContext, ShowListActivity::class.java);
+                startActivity(intent)
 
             }
             R.id.nav_slideshow -> {

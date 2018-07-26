@@ -1,5 +1,6 @@
 package saidul.com.mvvmbase
 
+import com.facebook.drawee.backends.pipeline.Fresco
 import dagger.android.AndroidInjector
 import dagger.android.DaggerApplication
 import saidul.com.mvvmbase.di.DaggerAppComponent
@@ -15,6 +16,7 @@ class MyApplication: DaggerApplication() {
     override fun onCreate() {
         super.onCreate()
         Timber.plant(Timber.DebugTree())
+        Fresco.initialize(this);
     }
 
     override fun applicationInjector(): AndroidInjector<out MyApplication> {

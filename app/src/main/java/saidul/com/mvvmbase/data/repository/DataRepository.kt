@@ -4,6 +4,8 @@ import io.reactivex.Observable
 import saidul.com.mvvmbase.data.models.RepoSearchResponse
 import saidul.com.mvvmbase.data.services.GithubService
 import saidul.com.mvvmbase.di.annotations.ApplicationScope
+import saidul.com.mvvmbase.views.main.listOfAlbums.model.Datum
+import java.net.URI
 import javax.inject.Inject
 
 /**
@@ -22,6 +24,10 @@ class DataRepository @Inject constructor(private val githubService: GithubServic
         return githubService.searchRepos(query);
     }
 
+    fun getAlbusList() : Observable<Array<Datum>>? {
+
+        return githubService.getAlbums(URI("https://jsonplaceholder.typicode.com/photos"));
+    }
 
 
 }
