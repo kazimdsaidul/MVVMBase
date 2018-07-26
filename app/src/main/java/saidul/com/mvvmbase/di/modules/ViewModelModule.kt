@@ -24,11 +24,13 @@ abstract class ViewModelModule {
     abstract fun bindMainViewModel(basicViewModel: BasicViewModel): ViewModel
 
 
+    // add must be every Mode in your application.
     @Binds
     @IntoMap
     @ViewModelKey(AlbusActivityModel::class)
     abstract fun bindAlbusActivityViewModel(albusActivityModel: AlbusActivityModel): ViewModel
 
+    //
 
 
     @Binds

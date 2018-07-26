@@ -16,11 +16,15 @@ import saidul.com.mvvmbase.views.main.listOfAlbums.ShowListActivity
 @Module
 abstract class ActivityBuilderModule {
 
-    // every activity modual must be add in this array list
+    // add application every Module in this array
     @ActivityScope
     @ContributesAndroidInjector(modules = arrayOf(BasicActivityModule::class, AlbumsActivityModule::class))
     abstract fun bindBasicActivity(): BasicActivity
 
+
+    // add must be activity injection method like hare
     @ContributesAndroidInjector
     abstract fun bindAlbumsActivit(): ShowListActivity
+    //
+
 }
